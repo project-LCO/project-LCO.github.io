@@ -45,12 +45,13 @@
                         <h5 class="px-3 py-1 ">PROGRAMS</h5>
                         <!-- Search -->
                         <div class="form-inline pl-2 m-1">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="text" onkeyup="search()"placeholder="Search" aria-label="Search" id="search">
                         </div>
                         <!-- ./Search -->
-
+                        
+                        <!-- list -->
                         <li class="nav-item">
-                            <a href="" class="nav-link active"> PALINDROME</a>
+                            <a href="index.html" class="nav-link active"> PALINDROME</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link"> FIBNACCI SERIES</a>
@@ -60,26 +61,18 @@
                              
                         </li>
                         <li class="nav-item">
-                             <a href="" class="nav-link">BUUBLE SORT</a>
+                             <a href="" class="nav-link">BUBLE SORT</a>
                              
                         </li>
                         <li class="nav-item">
                              <a href="" class="nav-link">FIND THIRD LARGEST NUMBER IN ARRAY</a>
                         </li>
-                        
+                        <!-- ./list -->
                     </ul>
                 </div>
            </div>
-           <!-- search -->
-           
-           <!-- ./search -->
-           
-           <!-- list -->
-           
-           <!-- ./list -->
-           
-           <!-- ./left sidebar -->
-           
+        <!-- ./left sidebar -->
+
            <!-- main content  -->
            
            <!-- ./main content  -->
@@ -109,6 +102,26 @@
         <!-- bootstrap js  -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <!-- ./bootstrap -->
+        <!-- search js -->
+        <script>
+            function search() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("search");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("list");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+
+                    }
+                }
+            }
+        </script>
+        <!-- ./search js -->
     </body>
     
     </html>
