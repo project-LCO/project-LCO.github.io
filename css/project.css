@@ -60,7 +60,7 @@
 }
 @media (max-width: 768px) {
     .sidebar {
-      min-width: 207px;
+      min-width: 204px;
         margin-left: -250px;
     }
     .sidebar-sticky{
