@@ -1,6 +1,7 @@
   /*
  * Sidebar
  */
+ 
 
 .sidebar {
   position: fixed;
@@ -65,4 +66,16 @@
 #list li a:hover:not(.header) {
   background-color: #eee;
 }
+
+/* main */
     
+[role="main"] {
+        padding-top: 48px; /* Space for fixed navbar */
+        
+    }
+    [role="main"] h1{
+        font-family: "Segoe UI",Arial,sans-serif;
+        font-weight: 400;
+        margin: 10px 0;
+    }
+

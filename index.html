@@ -12,9 +12,12 @@
     <!-- bootsratp cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!-- ./bootstrap cdn -->
+    <link rel="stylesheet" href="css/prettify.css">
     <link rel="stylesheet" href="css/project.css">
+    <!-- codeblock css -->
     <style>
-
+        
+           
     </style>
 </head>
 
@@ -38,7 +41,7 @@
         <div class="row">
 
            <!-- left sidebar -->
-           <div class="col-md-2 d-none d-md-block bg-light sidebar">
+           <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column" id="list">
                         
@@ -70,11 +73,51 @@
                         <!-- ./list -->
                     </ul>
                 </div>
-           </div>
+            </nav>
         <!-- ./left sidebar -->
 
            <!-- main content  -->
-           
+           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                    <h1>What is Palindrome number?</h1>
+                    
+                </div>
+               
+
+<pre class="prettyprint linenums:1">
+<code>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, num, digit, rev = 0;
+
+    cout << "Enter a positive number: ";
+    cin >> num;
+
+     n = num;
+
+    do
+    {
+        digit = num % 10;
+        rev = (rev * 10) + digit;
+        num = num / 10;
+    } while (num != 0);
+
+    cout << " The reverse of the number is: " << rev << endl;
+
+    if (n == rev)
+        cout << " The number is a palindrome";
+    else
+        cout << " The number is not a palindrome";
+
+    return 0;
+}
+</code>
+</pre>
+              
+           </main>
            <!-- ./main content  -->
            
        
@@ -102,6 +145,10 @@
         <!-- bootstrap js  -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <!-- ./bootstrap -->
+
+        <!-- code-prittfy js for syntax highlight also css desert skin -->
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+        <!-- ./code-prittfy -->
         <!-- search js -->
         <script>
             function search() {
@@ -110,7 +157,7 @@
                 filter = input.value.toUpperCase();
                 ul = document.getElementById("list");
                 li = ul.getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
+                for (i = 0; i < li.le>; i++) {
                     a = li[i].getElementsByTagName("a")[0];
                     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
                         li[i].style.display = "";
