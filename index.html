@@ -26,7 +26,7 @@
     <!-- navgation -->
     
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark flex-md-nowrap p-1 shadow">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">PROJECT-LCO</a>
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-uppercase" href="#">project-lco</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,32 +43,32 @@
            <!-- left sidebar -->
            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column" id="list">
+                    <ul class="nav flex-column nav-tabs" id="list">
                         
-                        <h5 class="px-3 py-1 ">PROGRAMS</h5>
+                        <h5 class="px-3 py-1 text-uppercase">PROGRAMS</h5>
                         <!-- Search -->
-                        <div class="form-inline pl-2 m-1">
+                        <div class="form-inline mx-auto mb-2">
                             <input class="form-control mr-sm-2" type="text" onkeyup="search()"placeholder="Search" aria-label="Search" id="search">
                         </div>
                         <!-- ./Search -->
                         
                         <!-- list -->
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link active"> PALINDROME</a>
+                            <a class="nav-link active" data-toggle="tab" href="#one"> PALINDROME</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link"> FIBNACCI SERIES</a>
+                            <a class="nav-link" data-toggle="tab" href="#two"> FIBNACCI SERIES</a>
                         </li>
                         <li class="nav-item">
-                            <a href=""class="nav-link">FACTORIAL NUMBER</a>
+                            <a class="nav-link" data-toggle="tab" href="#three">FACTORIAL NUMBER</a>
                              
                         </li>
                         <li class="nav-item">
-                             <a href="" class="nav-link">BUBLE SORT</a>
+                             <a  class="nav-link" data-toggle="tab" href="#four">BUBLE SORT</a>
                              
                         </li>
                         <li class="nav-item">
-                             <a href="" class="nav-link">FIND THIRD LARGEST NUMBER IN ARRAY</a>
+                             <a class="nav-link" data-toggle="tab" href="#five">FIND THIRD LARGEST NUMBER IN ARRAY</a>
                         </li>
                         <!-- ./list -->
                     </ul>
@@ -77,46 +77,522 @@
         <!-- ./left sidebar -->
 
            <!-- main content  -->
-           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
-                    <h1>What is Palindrome number?</h1>
-                    
-                </div>
-               
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="tab-content"> <!--verticale tab-->
 
+    
+    <div class="tab-pane container active" id="one">
+    <!-- div for question -->
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+        <!-- question -->
+        <h1>What is Palindrome number?</h1>       
+    </div>
+    <div class="description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi sint quibusdam.</p>
+    </div>
+               
+<div class="card">
+    <div class="card-header bg-dark text-white">
+        CODE
+    </div>
+    <ul class="nav nav-tabs nav-tabs-dark">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#c">C</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"data-toggle="tab" href="#java">JAVA</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more  coming soon">More</a>
+        </li>
+    </ul>
+    <div class="card-body">
+        <!-- code tab -->
+        <div class="tab-content">
+            <!-- tab-pane for c  -->
+            <div class="tab-pane container active" id="c">
 <pre class="prettyprint linenums:1">
 <code>
-#include <iostream>
-using namespace std;
+ #include <iostream>
+ using namespace std;
+ 
+ int main()
+ {
+     int n, num, digit, rev = 0;
+ 
+     cout << "Enter a positive number: ";
+     cin >> num;
+ 
+      n = num;
+ 
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+ 
+     cout << " The reverse of the number is: " << rev << endl;
+ 
+     if (n == rev)
+         cout << " The number is a palindrome";
+     else
+         cout << " The number is not a palindrome";
+ 
+     return 0;
+ }
+</code>
+</pre>
+</div>
+<!-- ./tab-pane c -->
 
-int main()
-{
-    int n, num, digit, rev = 0;
-
-    cout << "Enter a positive number: ";
-    cin >> num;
-
-     n = num;
-
-    do
-    {
-        digit = num % 10;
-        rev = (rev * 10) + digit;
-        num = num / 10;
-    } while (num != 0);
-
-    cout << " The reverse of the number is: " << rev << endl;
-
-    if (n == rev)
-        cout << " The number is a palindrome";
-    else
-        cout << " The number is not a palindrome";
-
-    return 0;
+<!-- tab-pane for java -->
+        <div class="tab-pane container fade" id="java">
+<!-- code for java -->
+<pre class="prettyprint linenums:1">
+<code>
+class PalindromeExample{ 
+public static void main(String args[]){
+    int r,sum=0,temp;
+    int n=454;//It is the number variableto be checked for palindrome
+     
+    temp=n;
+    while(n>0){
+        r=n%10; //getting remainder
+        sum=(sum*10)+r;
+        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
+        else
+        System.out.println("not palindrome");
+    }
 }
 </code>
 </pre>
-              
+<!-- ./code java -->
+            </div> <!--java tab-->
+
+        </div> <!--./tab pane-->
+
+    </div><!--./card body  -->
+</div><!--./card -->
+    </div>
+<!-- tab two -->
+        <div class="tab-pane container" id="two">
+            <!-- div for question -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                <!-- question -->
+                <h1>What is Fibonacci Serries?</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
+                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
+                    sint quibusdam.</p>
+            </div>
+        
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    CODE
+                </div>
+                <ul class="nav nav-tabs nav-tabs-dark">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#c_programme">C</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#java_p">JAVA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <!-- code tab -->
+                    <div class="tab-content">
+                        <!-- tab-pane for c  -->
+                        <div class="tab-pane container active" id="c_programme">
+                            <pre class="prettyprint linenums:1">
+        <code>
+         #include <iostream>
+         using namespace std;
+         
+         int main()
+         {
+             int n, num, digit, rev = 0;
+         
+             cout << "Enter a positive number: ";
+             cin >> num;
+         
+              n = num;
+         
+             do
+             {
+                 digit = num % 10;
+                 rev = (rev * 10) + digit;
+                 num = num / 10;
+             } while (num != 0);
+         
+             cout << " The reverse of the number is: " << rev << endl;
+         
+             if (n == rev)
+                 cout << " The number is a palindrome";
+             else
+                 cout << " The number is not a palindrome";
+         
+             return 0;
+         }
+        </code>
+        </pre>
+                        </div>
+                        <!-- ./tab-pane c -->
+        
+                        <!-- tab-pane for java -->
+                        <div class="tab-pane container fade" id="java_p">
+                            <!-- code for java -->
+                            <pre class="prettyprint linenums:1">
+<code>
+class PalindromeExample{ 
+public static void main(String args[]){
+    int r,sum=0,temp;
+     int n=454;//It is the number variableto be checked for palindrome
+             
+            temp=n;
+            while(n>0){
+                r=n%10; //getting remainder
+                sum=(sum*10)+r;
+                n=n/10; } if(temp==sum) System.out.println("palindrome number ");
+                else
+                System.out.println("not palindrome");
+            }
+        }
+</code>
+</pre>
+                            <!-- ./code java -->
+                        </div>
+                        <!--java tab-->
+        
+                    </div>
+                    <!--./tab pane-->
+        
+                </div>
+                <!--./card body  -->
+            </div>
+            <!--./card -->
+        </div>
+        <!-- Three  -->
+
+        <div class="tab-pane container" id="three">
+            <!-- div for question -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                <!-- question -->
+                <h1>What is Factorial number?</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
+                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
+                    sint quibusdam.</p>
+            </div>
+        
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    CODE
+                </div>
+                <ul class="nav nav-tabs nav-tabs-dark">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#c_programme">C</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#java_p">JAVA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <!-- code tab -->
+                    <div class="tab-content">
+                        <!-- tab-pane for c  -->
+                        <div class="tab-pane container active" id="c_programme">
+                            <pre class="prettyprint linenums:1">
+                <code>
+                 #include <iostream>
+                 using namespace std;
+                 
+                 int main()
+                 {
+                     int n, num, digit, rev = 0;
+                 
+                     cout << "Enter a positive number: ";
+                     cin >> num;
+                 
+                      n = num;
+                 
+                     do
+                     {
+                         digit = num % 10;
+                         rev = (rev * 10) + digit;
+                         num = num / 10;
+                     } while (num != 0);
+                 
+                     cout << " The reverse of the number is: " << rev << endl;
+                 
+                     if (n == rev)
+                         cout << " The number is a palindrome";
+                     else
+                         cout << " The number is not a palindrome";
+                 
+                     return 0;
+                 }
+                </code>
+                </pre>
+                        </div>
+                        <!-- ./tab-pane c -->
+        
+                        <!-- tab-pane for java -->
+                        <div class="tab-pane container fade" id="java_p">
+                            <!-- code for java -->
+                            <pre class="prettyprint linenums:1">
+        <code>
+        class PalindromeExample{ 
+        public static void main(String args[]){
+            int r,sum=0,temp;
+             int n=454;//It is the number variableto be checked for palindrome
+                     
+                    temp=n;
+                    while(n>0){
+                        r=n%10; //getting remainder
+                        sum=(sum*10)+r;
+                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
+                        else
+                        System.out.println("not palindrome");
+                    }
+                }
+        </code>
+        </pre>
+                            <!-- ./code java -->
+                        </div>
+                        <!--java tab-->
+        
+                    </div>
+                    <!--./tab pane-->
+        
+                </div>
+                <!--./card body  -->
+            </div>
+            <!--./card -->
+        </div>
+        <!-- four -->
+        <div class="tab-pane container" id="four">
+            <!-- div for question -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                <!-- question -->
+                <h1>What is Bubble sort?</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
+                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
+                    sint quibusdam.</p>
+            </div>
+        
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    CODE
+                </div>
+                <ul class="nav nav-tabs nav-tabs-dark">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#c_programme">C</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#java_p">JAVA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <!-- code tab -->
+                    <div class="tab-content">
+                        <!-- tab-pane for c  -->
+                        <div class="tab-pane container active" id="c_programme">
+                            <pre class="prettyprint linenums:1">
+                <code>
+                 #include <iostream>
+                 using namespace std;
+                 
+                 int main()
+                 {
+                     int n, num, digit, rev = 0;
+                 
+                     cout << "Enter a positive number: ";
+                     cin >> num;
+                 
+                      n = num;
+                 
+                     do
+                     {
+                         digit = num % 10;
+                         rev = (rev * 10) + digit;
+                         num = num / 10;
+                     } while (num != 0);
+                 
+                     cout << " The reverse of the number is: " << rev << endl;
+                 
+                     if (n == rev)
+                         cout << " The number is a palindrome";
+                     else
+                         cout << " The number is not a palindrome";
+                 
+                     return 0;
+                 }
+                </code>
+                </pre>
+                        </div>
+                        <!-- ./tab-pane c -->
+        
+                        <!-- tab-pane for java -->
+                        <div class="tab-pane container fade" id="java_p">
+                            <!-- code for java -->
+                            <pre class="prettyprint linenums:1">
+        <code>
+        class PalindromeExample{ 
+        public static void main(String args[]){
+            int r,sum=0,temp;
+             int n=454;//It is the number variableto be checked for palindrome
+                     
+                    temp=n;
+                    while(n>0){
+                        r=n%10; //getting remainder
+                        sum=(sum*10)+r;
+                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
+                        else
+                        System.out.println("not palindrome");
+                    }
+                }
+        </code>
+        </pre>
+                            <!-- ./code java -->
+                        </div>
+                        <!--java tab-->
+        
+                    </div>
+                    <!--./tab pane-->
+        
+                </div>
+                <!--./card body  -->
+            </div>
+            <!--./card -->
+        </div>
+
+        <!--five  -->
+        <div class="tab-pane container" id="five">
+            <!-- div for question -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                <!-- question -->
+                <h1>FIND THIRD LARGEST NUMBER IS ARRAY?</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
+                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
+                    sint quibusdam.</p>
+            </div>
+        
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    CODE
+                </div>
+                <ul class="nav nav-tabs nav-tabs-dark">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#c_programme">C</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#java_p">JAVA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <!-- code tab -->
+                    <div class="tab-content">
+                        <!-- tab-pane for c  -->
+                        <div class="tab-pane container active" id="c_programme">
+                            <pre class="prettyprint linenums:1">
+                <code>
+                 #include <iostream>
+                 using namespace std;
+                 
+                 int main()
+                 {
+                     int n, num, digit, rev = 0;
+                 
+                     cout << "Enter a positive number: ";
+                     cin >> num;
+                 
+                      n = num;
+                 
+                     do
+                     {
+                         digit = num % 10;
+                         rev = (rev * 10) + digit;
+                         num = num / 10;
+                     } while (num != 0);
+                 
+                     cout << " The reverse of the number is: " << rev << endl;
+                 
+                     if (n == rev)
+                         cout << " The number is a palindrome";
+                     else
+                         cout << " The number is not a palindrome";
+                 
+                     return 0;
+                 }
+                </code>
+                </pre>
+                        </div>
+                        <!-- ./tab-pane c -->
+        
+                        <!-- tab-pane for java -->
+                        <div class="tab-pane container fade" id="java_p">
+                            <!-- code for java -->
+                            <pre class="prettyprint linenums:1">
+        <code>
+        class PalindromeExample{ 
+        public static void main(String args[]){
+            int r,sum=0,temp;
+             int n=454;//It is the number variableto be checked for palindrome
+                     
+                    temp=n;
+                    while(n>0){
+                        r=n%10; //getting remainder
+                        sum=(sum*10)+r;
+                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
+                        else
+                        System.out.println("not palindrome");
+                    }
+                }
+        </code>
+        </pre>
+                            <!-- ./code java -->
+                        </div>
+                        <!--java tab-->
+        
+                    </div>
+                    <!--./tab pane-->
+        
+                </div>
+                <!--./card body  -->
+            </div>
+            <!--./card -->
+        </div><!--./sol pane-->
+        <!--  -->
+</div><!--./tab-pane vertical -->
+                    <!-- footer -->
+                <footer class="footer bg-light mt-4 p-3">
+                    <div class="container-fluid ">
+                        
+                        <h1 class="text-center text-dark">PROJECT-LCO</h1>
+                        <p class="text-dark text-center p-1"> Designed by <a href="http://greddy.in">G.GOUTHAM REDDY</a> &copy;2018</p>
+                    </div>
+                </footer>
+                    <!-- ./footer -->
+                
            </main>
            <!-- ./main content  -->
            
@@ -124,14 +600,7 @@ int main()
         </div>
     </div>
     <!-- ./container -->
-        <!-- footer -->
-        <!-- <footer class="footer">
-            <div class="container bg-dark">
-                <span class="text-muted">Place sticky footer content here.</span>
-                <h1>GGR</h1>
-            </div>
-        </footer> -->
-        <!-- ./footer -->
+       
         
         
         
@@ -149,8 +618,26 @@ int main()
         <!-- code-prittfy js for syntax highlight also css desert skin -->
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
         <!-- ./code-prittfy -->
-        <!-- search js -->
+        <!--  -->
         <script>
+            $(document).ready(function () {
+               
+                $(".nav-tabs a").click(function () {
+                    $(this).tab('show');
+                });
+            });
+        </script>
+        <!-- tooltip initi -->
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <!-- ./tooltip-->
+        <!-- search js -->
+        
+        <script>
+
             function search() {
                 var input, filter, ul, li, a, i;
                 input = document.getElementById("search");
