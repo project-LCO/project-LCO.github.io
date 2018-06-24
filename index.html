@@ -24,10 +24,12 @@
 <body>
     
     <!-- navgation -->
+    <div class="wraper">
+
     
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark flex-md-nowrap p-1 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-uppercase" href="#">project-lco</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="#sidebar"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,7 +43,7 @@
         <div class="row">
 
            <!-- left sidebar -->
-           <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+           <nav class="collapse navbar-collapse  col-md-2 d-md-block bg-light sidebar" data-toggle="collapse" aria-expanded="true" id="sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column nav-tabs" id="list">
                         
@@ -597,7 +599,7 @@ public static void main(String args[]){
     </div>
     <!-- ./container -->
        
-        
+        </div> <!--wrapper-->
         
         
         <!-- js scripts -->
