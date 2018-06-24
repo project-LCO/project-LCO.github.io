@@ -69,11 +69,11 @@
 
 /* main */
     
-[role="main"] {
+main{
         padding-top: 48px; /* Space for fixed navbar */
         
     }
-    [role="main"] h1{
+   main h1{
         font-family: "Segoe UI",Arial,sans-serif;
         font-weight: 400;
         margin: 10px 0;
