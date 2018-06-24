@@ -8,9 +8,12 @@
   top: 0;
   bottom: 0;
   left: 0;
+  min-width: 207px;
+  max-width: 207px;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  transition: all 0.3s;
 }
 
 .sidebar-sticky {
@@ -33,19 +36,40 @@
   font-weight: 500;
   color: #333;
 }
-
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #999;
-}
-
 .sidebar .nav-link.active {
   color: #007bff;
 }
-
-
-
-
+.sidebar [data-toggle="collapse"] {
+    position: relative;
+}
+.sidebar [data-toggle="collapse"]:before {
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+.sidebar [aria-expanded="true"] {
+    background: rgba(0, 0, 0, .25);
+}
+.sidebar [aria-expanded="true"]:before {
+    content: "\f0d8";
+}
+.sidebar.toggled {
+    margin-left: -250px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+      min-width: 207px;
+        margin-left: -250px;
+    }
+    .sidebar-sticky{
+      overflow-y: auto;
+    }
+    .sidebar.toggled {
+        margin-left: 0;
+    }
+}
 
 #list {
   list-style-type: none;
@@ -72,7 +96,7 @@
     
 [role="main"] {
         padding-top: 48px; /* Space for fixed navbar */
-        
+        width: 100%;
     }
     [role="main"] h1{
         font-family: "Segoe UI",Arial,sans-serif;

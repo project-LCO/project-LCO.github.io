@@ -24,15 +24,15 @@
 <body>
     
     <!-- navgation -->
-    <div class="wraper">
+    <div class="d-flex">
 
     
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark flex-md-nowrap p-1 shadow">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-uppercase" href="#">project-lco</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="#sidebar"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button class="navbar-toggler sidebar-toggle" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="#sidebar" aria-expanded="true" id="sidebarCollapse" aria-label="Toggle
+            navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-uppercase" href="#">project-lco</a>
         </nav>
         
     <!-- ./navgation -->
@@ -43,9 +43,9 @@
         <div class="row">
 
            <!-- left sidebar -->
-           <nav class="collapse navbar-collapse  col-md-2 d-md-block bg-light sidebar" data-toggle="collapse" aria-expanded="true" id="sidebar">
+           <nav class="col-md-2 d-md-block bg-light sidebar" >
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column nav-tabs" id="list">
+                    <ul class="nav flex-column nav-tabs list-unstyled" id="list">
                         
                         <h5 class="px-3 py-1 text-uppercase">PROGRAMS</h5>
                         <!-- Search -->
@@ -617,7 +617,7 @@ public static void main(String args[]){
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
         <!-- ./code-prittfy -->
         <!--  -->
-        
+        <script src="js/bsadmin.js"></script>
         <!-- tooltip initi -->
         <script>
             $(document).ready(function () {
