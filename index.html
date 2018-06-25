@@ -76,8 +76,9 @@
             </nav>
         <!-- ./left sidebar -->
 
-           <!-- main content  -->
-<main role="main" class="col-sm-12 w-100 col-md-9 ml-sm-auto col-lg-10 px-4">
+ <!-- main content  -->
+    <main role="main" class="col-sm-12 w-100 col-md-9 ml-sm-auto col-lg-10 px-4">
+        
     <div class="tab-content"> <!--verticale tab-->
 
     
@@ -88,7 +89,17 @@
         <h1>What is Palindrome number?</h1>       
     </div>
     <div class="description">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi sint quibusdam.</p>
+        <p>A palindrome number is a number that remains the same even its digits are reversed. <br>
+            Like  121, 161 , 12321.
+            <br>
+            Programmatic approach to see wether number is palindrome or not. <br>
+             1  >> we take number as input. <br>
+             2  >> then store input in temp variable. <br>
+             3  >> revers the input. <br>
+             4  >> check number is palindrome or not <br>
+             5  >> print results .  <br>
+
+        </p>
     </div>
  
 
@@ -109,36 +120,34 @@
         <div class="tab-content w-100">
             <!-- tab-pane for c  -->
             <div class="tab-pane  active" id="quest1-c">
+<!-- code  -->
 <pre class="prettyprint linenums:1">
 <code>
- #include <iostream>
- using namespace std;
- 
- int main()
- {
-     int n, num, digit, rev = 0;
- 
-     cout << "Enter a positive number: ";
-     cin >> num;
- 
-      n = num;
- 
-     do
-     {
-         digit = num % 10;
-         rev = (rev * 10) + digit;
-         num = num / 10;
-     } while (num != 0);
- 
-     cout << " The reverse of the number is: " << rev << endl;
- 
-     if (n == rev)
-         cout << " The number is a palindrome";
-     else
-         cout << " The number is not a palindrome";
- 
+ #include &lt;stdio.h&gt;
+int main()
+{ 
+    int inputNum ,temp, digit, reverse = 0;
+    
+    printf("Enter a number to check if it is a palindrome or not\n");
+    scanf("%d",&inputNum);
+    temp = inputNum; //storing number in temp variable
+    while (inputNum != 0)
+    { 
+        digit = inputNum % 10;
+        reverse = (reverse * 10 ) + digit;
+        inputNum = inputNum/10;
+    }
+    // checks is input and reversed number is same or not
+    if(temp == reverse){
+        printf("%d is a palindrome number.\n", temp);
+
+    }
+    else {
+        printf("%d isn't a palindrome number.\n", temp);
+        
+    }
      return 0;
- }
+}
 </code>
 </pre>
 </div>
@@ -149,45 +158,61 @@
 <!-- code for java -->
 <pre class="prettyprint linenums:1">
 <code>
-class PalindromeExample{ 
-public static void main(String args[]){
-    int r,sum=0,temp;
-    int n=454;//It is the number variableto be checked for palindrome
-     
-    temp=n;
-    while(n>0){
-        r=n%10; //getting remainder
-        sum=(sum*10)+r;
-        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
-        else
-        System.out.println("not palindrome");
-    }
-}
+import java.util.*;   
+class PalindromeExample  
+{  
+   public static void main(String args[])  
+   {  
+        int inputNum ,temp, digit, reverse = 0;   
+        
+        Scanner reader = new Scanner(System.in);   
+        System.out.println("Enter a number to check if it is a palindrome or not");  
+        inputNum = reader.nextInt();
+
+	temp = inputNum;//storing number in temp variable
+        while (inputNum != 0)
+        { 
+            digit = inputNum % 10;
+            reverse = (reverse * 10 ) + digit;
+            inputNum = inputNum/10;
+         }
+     // checks is input and reversed number is same or not
+	if(temp == reverse)
+	{
+		System.out.println(temp + " is a palindrome number.");
+	}
+	else
+	{
+		System.out.println(temp + " isn\'t a palindrome number.");	
+	}
+   }  
+} 
 </code>
 </pre>
 <!-- ./code java -->
-            </div> <!--java tab-->
+         </div> <!--java tab-->
 
-        </div> <!--./tab pane-->
+    </div> <!--./tab pane-->
 
-    
-
-    </div>
+    </div><!--verticale tab -->
 <!-- tab question 2 -->
-        <div class="tab-pane container" id="quest2">
+        <div class="tab-pane " id="quest2">
             <!-- div for question -->
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
                 <!-- question -->
                 <h1>What is Fibonacci Serries?</h1>
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
-                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
-                    sint quibusdam.</p>
+                <p>The Fibonacci is a Serries of numbers, each number (term) is the sum of the previous two numbers.
+                    like 0 , 1, 1, 2, 3, 5, ... <br>
+                    Programmatic approach to achive fibonacci Series up to number of terms. <br>
+                    1 >> Take number of terms. <br>
+                    2 >> loop upto term. <br>
+                    3 >> inside loop add sum of two previous terms to next term. <br>
+                    4 >> print results. <br>
+                </p>
             </div>
-        
-            <div class="container-fluid">
-                
+
                 <ul class="nav nav-tabs nav-tabs-dark">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#quest2-c">C</a>
@@ -199,98 +224,93 @@ public static void main(String args[]){
                         <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
                     </li>
                 </ul>
-                <div class="card-body">
                     <!-- code tab -->
-                    <div class="tab-content">
-                        <!-- tab-pane for c  -->
-                        <div class="tab-pane container active" id="quest2-c">
-                            <pre class="prettyprint linenums:1">
-        <code>
-         #include <iostream>
-         using namespace std;
-         
-         int main()
-         {
-             int n, num, digit, rev = 0;
-         
-             cout << "Enter a positive number: ";
-             cin >> num;
-         
-              n = num;
-         
-             do
-             {
-                 digit = num % 10;
-                 rev = (rev * 10) + digit;
-                 num = num / 10;
-             } while (num != 0);
-         
-             cout << " The reverse of the number is: " << rev << endl;
-         
-             if (n == rev)
-                 cout << " The number is a palindrome";
-             else
-                 cout << " The number is not a palindrome";
-         
-             return 0;
-         }
+        <div class="tab-content">
+            <!-- tab-pane for c  -->
+            <div class="tab-pane  active" id="quest2-c">
+<pre class="prettyprint linenums:1">
+<code>
+#include <stdio.h>
+int main()
+{
+    int i, input, term1 = 0, term2 = 1, nextTerm;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &input);
+
+    printf("Fibonacci Series: ");
+
+    for (i = 1; i <= input; ++i)
+    {
+        printf("%d, ", term1);
+        nextTerm = term1 + term2;
+        term1 = term2;
+        term2 = nextTerm;
+    }
+    return 0;
+}
         </code>
         </pre>
-                        </div>
-                        <!-- ./tab-pane c -->
+        </div>
+        <!-- ./tab-pane c -->
         
-                        <!-- tab-pane for java -->
-                        <div class="tab-pane container fade" id="quest2-java">
-                            <!-- code for java -->
-                            <pre class="prettyprint linenums:1">
+        <!-- tab-pane for java -->
+    <div class="tab-pane " id="quest2-java">
+        <!-- code for java -->
+<pre class="prettyprint linenums:1">
 <code>
-class PalindromeExample{ 
-public static void main(String args[]){
-    int r,sum=0,temp;
-     int n=454;//It is the number variableto be checked for palindrome
-             
-            temp=n;
-            while(n>0){
-                r=n%10; //getting remainder
-                sum=(sum*10)+r;
-                n=n/10; } if(temp==sum) System.out.println("palindrome number ");
-                else
-                System.out.println("not palindrome");
-            }
-        }
+import java.util.*;
+
+class fibonaExample{
+
+	public static void main(String args[]){
+		
+		int i, input, term1 = 0, term2 = 1, nextTerm;
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter the number of terms: ");
+		input = reader.nextInt();
+		
+		System.out.println("Fibonacci Series: ");
+		
+		for (i = 1; i <= input; ++i)
+		{
+			System.out.print(" " + term1+"," );
+			nextTerm = term1 + term2;
+			term1 = term2;
+			term2 = nextTerm;
+		}
+	}
+}
 </code>
 </pre>
-                            <!-- ./code java -->
-                        </div>
-                        <!--java tab-->
+    <!-- ./code java -->
+    </div>
+    <!--java tab-->  
+</div>
+
         
-                    </div>
-                    <!--./tab pane-->
-        
-                </div>
-                <!--./card body  -->
-            </div>
-            <!--./card -->
-        </div>
+</div><!--./tab q3 pane-->
+               
         <!-- tab question three  -->
 
-        <div class="tab-pane container" id="quest3">
-            <!-- div for question -->
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+    <div class="tab-pane" id="quest3">
+        <!-- div for question -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
                 <!-- question -->
-                <h1>What is Factorial number?</h1>
-            </div>
+            <h1>What is Factorial number?</h1>
+        </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
-                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
-                    sint quibusdam.</p>
+                <p>Factorial is a number <b>N</b> which is product of all postive number upto <b>N</b>. <br>
+                    like 5 = 1 * 2 * 3 * 4 * 5 = 120 . <br>
+                    Programmatic approach to find factorial of a number . <br>
+                    1 >> Take input from user. <br>
+                    2 >> Factorial initialization to 1. <br>
+                    3 >> run loop upto N . <br>
+                    4 >> multiply the current loop counter value. <br>
+                </p>
             </div>
-        
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                    CODE
-                </div>
-                <ul class="nav nav-tabs nav-tabs-dark">
+
+            <ul class="nav nav-tabs nav-tabs-dark">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#quest3-c">C</a>
                     </li>
@@ -301,96 +321,93 @@ public static void main(String args[]){
                         <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
                     </li>
                 </ul>
-                <div class="card-body">
-                    <!-- code tab -->
-                    <div class="tab-content">
-                        <!-- tab-pane for c  -->
-                        <div class="tab-pane container active" id="quest3-c">
-                            <pre class="prettyprint linenums:1">
-                <code>
-                 #include <iostream>
-                 using namespace std;
-                 
-                 int main()
-                 {
-                     int n, num, digit, rev = 0;
-                 
-                     cout << "Enter a positive number: ";
-                     cin >> num;
-                 
-                      n = num;
-                 
-                     do
-                     {
-                         digit = num % 10;
-                         rev = (rev * 10) + digit;
-                         num = num / 10;
-                     } while (num != 0);
-                 
-                     cout << " The reverse of the number is: " << rev << endl;
-                 
-                     if (n == rev)
-                         cout << " The number is a palindrome";
-                     else
-                         cout << " The number is not a palindrome";
-                 
-                     return 0;
-                 }
-                </code>
-                </pre>
-                        </div>
-                        <!-- ./tab-pane c -->
+
+    <!-- code tab -->
+    <div class="tab-content">
+        <!-- tab-pane for c  -->
+        <div class="tab-pane  active" id="quest3-c">
+<pre class="prettyprint linenums:1">
+    <code>
+ #include <stdio.h>
+
+int main()
+{
+    int i, num;
+    unsigned long long fact=1LL;
+
+    //Input number from user
+    printf("Enter any postive number to calculate factorial: ");
+    scanf("%d", &num);
+
+     // looping 1 to num 
+    for(i=1; i<=num; i++)
+    {
+        fact = fact * i;
+    }
+
+    printf("Factorial of %d = %llu", num, fact);
+
+    return 0;
+}
+    </code>
+</pre>
+    </div>
+<!-- ./tab-pane c -->
         
-                        <!-- tab-pane for java -->
-                        <div class="tab-pane container fade" id="quest3-java">
-                            <!-- code for java -->
-                            <pre class="prettyprint linenums:1">
-        <code>
-        class PalindromeExample{ 
-        public static void main(String args[]){
-            int r,sum=0,temp;
-             int n=454;//It is the number variableto be checked for palindrome
-                     
-                    temp=n;
-                    while(n>0){
-                        r=n%10; //getting remainder
-                        sum=(sum*10)+r;
-                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
-                        else
-                        System.out.println("not palindrome");
-                    }
-                }
-        </code>
-        </pre>
-                            <!-- ./code java -->
-                        </div>
-                        <!--java tab-->
-        
-                    </div>
-                    <!--./tab pane-->
-        
-                </div>
-                <!--./card body  -->
-            </div>
-            <!--./card -->
+<!-- tab-pane for java -->
+<div class="tab-pane " id="quest3-java">
+    <!-- code for java -->
+<pre class="prettyprint linenums:1">
+    <code>
+import java.util.*;
+ 
+class Factorial{
+   public static void main(String args[])
+   {
+      int i, num, fact = 1;
+ 
+      System.out.println("Enter an integer to calculate it's factorial");
+      Scanner in = new Scanner(System.in);
+    
+     // Input number from user
+      num = in.nextInt();
+ 
+     // looping  1 to num 
+     for(i=1; i<=num; i++)
+    {
+        fact = fact * i;
+    }
+	System.out.print("Factorial of " + num + " = "+ fact);
+   }
+}
+    </code>
+</pre>
+ <!-- ./code java -->
+</div>
+    <!--./java tab-->
+ </div>
+ <!--./tab pane-->
+</div> <!--./q3 end-->
+
+<!-- tab question four -->
+<div class="tab-pane" id="quest4">
+    <!-- div for question -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+        <!-- question -->
+        <h1>What is Bubble sort?</h1>
         </div>
-        <!-- tab question four -->
-        <div class="tab-pane container" id="quest4">
-            <!-- div for question -->
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
-                <!-- question -->
-                <h1>What is Bubble sort?</h1>
-            </div>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
-                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
-                    sint quibusdam.</p>
-            </div>
-        
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                    CODE
-                </div>
+        <div class="description">
+            <p>Bubble sort is a algorith for sorting elements in array.
+                 It traversed from first to last element and compares current
+                  element with the next and swap with largest. <br>
+                Programmatic approach to sort array using bubble sort algorithm. <br>
+                1 >> Create array . <br>
+                2 >> loop array upto array length. <br>
+                3 >> compare current element with next element in array. <br>
+                4 >> swap elements. <br>
+                5 >> print sorted array. <br>
+                </p>
+        </div>
                 <ul class="nav nav-tabs nav-tabs-dark">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#quest4-c">C</a>
@@ -402,98 +419,124 @@ public static void main(String args[]){
                         <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
                     </li>
                 </ul>
-                <div class="card-body">
                     <!-- code tab -->
-                    <div class="tab-content">
-                        <!-- tab-pane for c  -->
-                        <div class="tab-pane container active" id="quest4-c">
-                            <pre class="prettyprint linenums:1">
-                <code>
-                 #include <iostream>
-                 using namespace std;
-                 
-                 int main()
-                 {
-                     int n, num, digit, rev = 0;
-                 
-                     cout << "Enter a positive number: ";
-                     cin >> num;
-                 
-                      n = num;
-                 
-                     do
-                     {
-                         digit = num % 10;
-                         rev = (rev * 10) + digit;
-                         num = num / 10;
-                     } while (num != 0);
-                 
-                     cout << " The reverse of the number is: " << rev << endl;
-                 
-                     if (n == rev)
-                         cout << " The number is a palindrome";
-                     else
-                         cout << " The number is not a palindrome";
-                 
-                     return 0;
-                 }
-                </code>
-                </pre>
-                        </div>
-                        <!-- ./tab-pane c -->
+<div class="tab-content">
+<!-- tab-pane for c  -->
+     <div class="tab-pane active" id="quest4-c">
+<pre class="prettyprint linenums:1">
+<code>
+#include <stdio.h>
+ 
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   int i, j;
+   for (i = 0; i < n-1; i++)      
+ 
+       // Last i elements are already in place   
+       for (j = 0; j < n-i-1; j++) 
+           if (arr[j] > arr[j+1])
+              swap(&arr[j], &arr[j+1]);
+}
+ 
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("n");
+}
+ 
+// Driver program to test above functions
+int main()
+{
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
+}
+</code>
+</pre>
+ </div>
+ <!-- ./tab-pane c -->
         
                         <!-- tab-pane for java -->
-                        <div class="tab-pane container fade" id="quest4-java">
-                            <!-- code for java -->
-                            <pre class="prettyprint linenums:1">
-        <code>
-        class PalindromeExample{ 
-        public static void main(String args[]){
-            int r,sum=0,temp;
-             int n=454;//It is the number variableto be checked for palindrome
-                     
-                    temp=n;
-                    while(n>0){
-                        r=n%10; //getting remainder
-                        sum=(sum*10)+r;
-                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
-                        else
-                        System.out.println("not palindrome");
-                    }
-                }
-        </code>
-        </pre>
-                            <!-- ./code java -->
-                        </div>
-                        <!--java tab-->
-        
-                    </div>
-                    <!--./tab pane-->
-        
-                </div>
-                <!--./card body  -->
-            </div>
-            <!--./card -->
-        </div>
+<div class="tab-pane" id="quest4-java">
+<!-- code for java -->
+ <pre class="prettyprint linenums:1">
+<code>
+ public class BubbleSortExample {  
+    static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+  
+    }  
+    public static void main(String[] args) {  
+                int arr[] ={3,60,35,2,45,320,5};  
+                 
+                System.out.println("Array Before Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+                System.out.println();  
+                  
+                bubbleSort(arr);//sorting array elements using bubble sort  
+                 
+                System.out.println("Array After Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+   
+        }  
+}  
+</code>
+</pre>
+ <!-- ./code java -->
+ </div>
+ <!--java tab-->
+</div>
+ <!--./tab pane-->
+</div>
 
-        <!--tab question five  -->
-        <div class="tab-pane container" id="quest5">
-            <!-- div for question -->
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
-                <!-- question -->
-                <h1>FIND THIRD LARGEST NUMBER IS ARRAY?</h1>
-            </div>
+<!--tab question five  -->
+<div class="tab-pane " id="quest5">
+  <!-- div for question -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+        <!-- question -->
+        <h1>FIND THIRD LARGEST NUMBER IS ARRAY?</h1>
+        </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat, error eligendi architecto accusantium
-                    vero. Fugiat vero, incidunt obcaecati voluptate dignissimos, sit odit provident nisi beatae reprehenderit modi
-                    sint quibusdam.</p>
+                <p>We can find the third largest number in an array in java by
+                     sorting the array and returning the 3nd largest number. <br>
+                     Programmatic approach to find third largest number in array. <br>
+                     1 >> Take array or declare. <br>
+                     2 >> sort the array . <br>
+                     3 >> then get third largest number by index.
+                     4 >> print results.
+                    </p>
             </div>
-        
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                    CODE
-                </div>
-                <ul class="nav nav-tabs nav-tabs-dark">
+                 <ul class="nav nav-tabs nav-tabs-dark">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#quest5-c">C</a>
                     </li>
@@ -504,79 +547,75 @@ public static void main(String args[]){
                         <a class="nav-link disabled" data-toggle="tooltip" data-placement="right" title="more coming soon">More</a>
                     </li>
                 </ul>
-                <div class="card-body">
-                    <!-- code tab -->
-                    <div class="tab-content">
-                        <!-- tab-pane for c  -->
-                        <div class="tab-pane container active" id="quest5-c">
-                            <pre class="prettyprint linenums:1">
-                <code>
-                 #include <iostream>
-                 using namespace std;
-                 
-                 int main()
-                 {
-                     int n, num, digit, rev = 0;
-                 
-                     cout << "Enter a positive number: ";
-                     cin >> num;
-                 
-                      n = num;
-                 
-                     do
-                     {
-                         digit = num % 10;
-                         rev = (rev * 10) + digit;
-                         num = num / 10;
-                     } while (num != 0);
-                 
-                     cout << " The reverse of the number is: " << rev << endl;
-                 
-                     if (n == rev)
-                         cout << " The number is a palindrome";
-                     else
-                         cout << " The number is not a palindrome";
-                 
-                     return 0;
-                 }
-                </code>
-                </pre>
-                        </div>
-                        <!-- ./tab-pane c -->
+<!-- code tab -->
+<div class="tab-content">
+    <!-- tab-pane for c  -->
+        <div class="tab-pane  active" id="quest5-c">
+<pre class="prettyprint linenums:1">
+<code>
+#include <stdio.h>
+int getThirdLargest(int a[], int total){
+int temp;  
+for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[total-3]; 
+}
+int main()
+{
+    int a[]={1,2,5,6,3,2};  
+    
+    printf("Third Largest: %d "+getThirdLargest(a,6));  
+  
+}
+</code>
+</pre>
+</div>
+<!-- ./tab-pane c -->
         
-                        <!-- tab-pane for java -->
-                        <div class="tab-pane container fade" id="quest5-java">
-                            <!-- code for java -->
-                            <pre class="prettyprint linenums:1">
-        <code>
-        class PalindromeExample{ 
-        public static void main(String args[]){
-            int r,sum=0,temp;
-             int n=454;//It is the number variableto be checked for palindrome
-                     
-                    temp=n;
-                    while(n>0){
-                        r=n%10; //getting remainder
-                        sum=(sum*10)+r;
-                        n=n/10; } if(temp==sum) System.out.println("palindrome number ");
-                        else
-                        System.out.println("not palindrome");
-                    }
-                }
-        </code>
-        </pre>
-                            <!-- ./code java -->
-                        </div>
-                        <!--java tab-->
-        
-                    </div>
-                    <!--./tab pane-->
-        
-                </div>
-                <!--./card body  -->
-            </div>
-            <!--./card -->
-        </div><!--./sol pane-->
+<!-- tab-pane for java -->
+<div class="tab-pane fade" id="quest5-java">
+        <!-- code for java -->
+<pre class="prettyprint linenums:1">
+<code>
+public class ThirdLargestInArrayExample{  
+public static int getThirdLargest(int[] a, int total){  
+int temp;  
+for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[total-3];  
+}  
+public static void main(String args[]){  
+int a[]={1,2,5,6,3,2};  
+int b[]={44,66,99,77,33,22,55};  
+System.out.println("Third Largest: "+getThirdLargest(a,6));  
+System.out.println("Third Largest: "+getThirdLargest(b,7));  
+}}  
+</code>
+</pre>
+ <!-- ./code java -->
+    </div><!--java tab-->
+    </div><!--./tab 15 pane-->
+    </div>
         <!--  -->
 </div><!--./tab-pane vertical -->
                     <!-- footer -->
